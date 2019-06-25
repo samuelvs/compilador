@@ -1,16 +1,24 @@
-let code = `x = 2
-x + 4`;
+let code = `
+if ( x == 2 )
+{
+x + 4
+}`;
 
 const dicionario = [
   {type: "operator", words: ["+", "-", "/", "="]},
   {type: "int", words: ["0-9"]},
+  {type: "first-conditional", words: ["if"]},
+  {type: "ob", words: ["("]}, //opens brackets
+  {type: "cb", words: [")"]}, //close brackets
+  {type: "open-key", words: ["{"]}, //opens keys
+  {type: "close-key", words: ["}"]}, //close keys
   {type: "variable", words: ["a-z"]},
 ];
 
 const operators = ["+", "-", "*", "/", "="];
 
 const createTokensLexicon = string => {
-  const tokens = string.split(/[; \s]/gi);
+  const tokens = string.split(/[\s]/gi);
   return tokens;
 }
 
